@@ -1,0 +1,124 @@
+.container {
+  --button-color: var(--primary);
+  --corner-distance: 24px;
+  --corner-multiplier: 1.5;
+  --timing-function: cubic-bezier(0, 0, 0, 2.5);
+  --duration: 250ms;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  position: relative;
+  z-index: 1;
+  min-width: 130px;
+  min-height: calc(var(--corner-distance) * 2);
+  color: #ffffff;
+  border: 0;
+  border-radius: 16px;
+  padding: 0.25em 1em;
+  background: linear-gradient(#fff2, #0001), var(--button-color);
+  cursor: pointer;
+  transition:
+    transform var(--duration) var(--timing-function),
+    filter var(--duration) var(--timing-function);
+}
+
+.drawer {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  min-height: 32px;
+  border-radius: 16px;
+  padding: 0.25em 1em;
+  color: #000000;
+  font-family: "Poppins", monospace;
+  font-size: 0.8em;
+  font-weight: 600;
+  background: linear-gradient(#fff2, #0001), #fbec2c;
+  opacity: 0;
+  filter: blur(2px);
+  transition:
+    transform calc(0.5 * var(--duration)) ease,
+    filter var(--duration) var(--timing-function),
+    opacity calc(0.5 * var(--duration)) ease;
+}
+
+.top {
+  top: 0;
+  left: 0;
+  align-items: start;
+  border-radius: 12px 12px 0 0;
+}
+
+.bottom {
+  right: 0;
+  bottom: 0;
+  align-items: end;
+  border-radius: 0 0 12px 12px;
+}
+
+.text {
+  display: inline-block;
+  color: #ffffff;
+  font-family: "Syne", "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  /* background-image: linear-gradient(#444, #000a); */
+  background-clip: text;
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
+  filter: drop-shadow(0 1px 0 #fff6) drop-shadow(0 -1px 0 #0006);
+  transition:
+    transform var(--duration) var(--timing-function),
+    filter var(--duration) var(--timing-function);
+}
+
+
+
+.container:has(.button:hover) .button,
+.container:has(.button:focus-visible) .button {
+  transform: scale(1.05);
+  filter: drop-shadow(0 16px 16px #0002);
+}
+
+.container:has(.button:hover) .drawer,
+.container:has(.button:focus-visible) .drawer {
+  opacity: 1;
+  filter: blur(0);
+  animation: hue-anim 3s infinite linear;
+}
+
+.container:has(.button:hover) .top,
+.container:has(.button:focus-visible) .top {
+  transform: translateY(-24px) rotateZ(4deg);
+}
+
+.container:has(.button:hover) .bottom,
+.container:has(.button:focus-visible) .bottom {
+  transform: translateY(24px) rotateZ(4deg);
+}
+
+.container:has(.button:hover) .text,
+.container:has(.button:focus-visible) .text {
+  transform: scale(1.05);
+  /* color: #0008; */
+  filter: drop-shadow(0 1px 0 #fff6) drop-shadow(0 -1px 0 #0006) drop-shadow(0 6px 2px #0003);
+}
+
+.container:has(.button:hover),
+.container:has(.button:focus-visible) {
+  --corner-color: #0004;
+}
+
+.container:has(.button:active) .button {
+  transform: scale(0.95);
+  filter: drop-shadow(0 10px 4px #0002);
+}
+
+.container:has(.button:active) .drawer {
+  transform: translateY(0) scale(0.5);
+}
