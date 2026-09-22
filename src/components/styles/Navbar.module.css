@@ -15,7 +15,7 @@
   margin: 0 auto;
   padding: 0.75rem 1.25rem;
   color: var(--nav-fg);
-  background: rgba(255, 255, 255, 0.15);
+  background: rgb(21 25 34 / 82%);
   border: .5px solid var(--nav-border);
   border-radius: 1rem;
   /* box-shadow:
@@ -45,7 +45,7 @@
 
 .navbarLinks a {
   padding: 0.5rem 0.7rem;
-  color: var(--nav-bg);
+  color: var(--muted-foreground);
   border-radius: 0.5rem;
   font-size: 1.15rem;
   transition: color 150ms ease, background-color 150ms ease;

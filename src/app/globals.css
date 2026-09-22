@@ -1,18 +1,21 @@
 :root {
-  /* Color codes */
-  --background: #ffffff;
-  --primary: #E31C24;
+  --background: #0b0d12;
+  --surface: #151922;
+  --surface-raised: #1d222d;
+  --foreground: #f5f7fb;
+  --muted-foreground: #aab2c0;
+  --primary: #ff4d5a;
 
   /* Font families */
   --font-display: var(--font-geist-sans), var(--font-inter-tight), system-ui, sans-serif;
   --font-body: var(--font-geist-sans), system-ui, sans-serif;
   --font-label: var(--font-geist-mono), var(--font-jetbrains), ui-monospace, monospace;
 
-  
-  --nav-bg: #4a4a4a;
-  --nav-fg: #ffffff;
-  --nav-accent: #e11d48;
-  --nav-border: rgba(255,255,255,0.25);
+
+  --nav-bg: #151922;
+  --nav-fg: #f5f7fb;
+  --nav-accent: #ff4d5a;
+  --nav-border: rgba(255, 255, 255, 0.14);
 }
 
 
@@ -28,9 +31,9 @@ html {
 
 body {
   margin: 0;
-  background: white;
-  color: #111111;
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
 }
 
