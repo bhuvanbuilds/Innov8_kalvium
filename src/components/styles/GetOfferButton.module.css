@@ -38,7 +38,7 @@
   font-family: "Poppins", monospace;
   font-size: 0.8em;
   font-weight: 600;
-  background: linear-gradient(#fff2, #0001), #fbec2c;
+  background: linear-gradient(#fff2, #0001), #2563eb;
   opacity: 0;
   filter: blur(2px);
   transition:
